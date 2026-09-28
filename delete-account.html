@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Cara menghapus akun dan data aplikasi Receh: cadangan Google Drive, akses akun Google, dan data di perangkat.">
+<meta name="robots" content="index, follow">
+<title>Hapus Akun &amp; Data Receh</title>
+<style>
+  :root {
+    --bg: #F4F7F5;
+    --surface: #FFFFFF;
+    --ink: #14211C;
+    --ink-muted: #56665F;
+    --ink-faint: #839089;
+    --accent: #12805F;
+    --accent-strong: #0B3D2E;
+    --accent-soft: #E7F3EE;
+    --gold: #D69A1E;
+    --line: #D6DFDA;
+    --font-display: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101815;
+      --surface: #17221E;
+      --ink: #E6EEEA;
+      --ink-muted: #9BADA5;
+      --ink-faint: #6B7B74;
+      --accent: #4FC3A0;
+      --accent-strong: #7FD8BC;
+      --accent-soft: #1C2D27;
+      --gold: #F2B93B;
+      --line: #2A3733;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #101815;
+    --surface: #17221E;
+    --ink: #E6EEEA;
+    --ink-muted: #9BADA5;
+    --ink-faint: #6B7B74;
+    --accent: #4FC3A0;
+    --accent-strong: #7FD8BC;
+    --accent-soft: #1C2D27;
+    --gold: #F2B93B;
+    --line: #2A3733;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-strong); }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+    background: var(--accent-soft);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---- Masthead ---- */
+  .masthead {
+    padding: 56px 0 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .masthead .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin-bottom: 22px;
+  }
+  .masthead .mark .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex: none;
+  }
+  .masthead h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.1;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .masthead .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    font-size: 14px;
+    color: var(--ink-muted);
+  }
+  .masthead .meta strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- TOC ---- */
+  .toc {
+    margin: 40px 0 8px;
+    padding: 20px 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .toc h2 {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+  .toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    columns: 2;
+    column-gap: 24px;
+  }
+  .toc li { break-inside: avoid; margin-bottom: 8px; }
+  .toc a { text-decoration: none; font-size: 14.5px; color: var(--ink); }
+  .toc a:hover { color: var(--accent-strong); }
+  .toc a .n { color: var(--ink-faint); font-family: var(--font-mono); font-size: 13px; margin-right: 8px; }
+
+  /* ---- Sections ---- */
+  section.doc-section {
+    padding: 44px 0;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 24px;
+  }
+  section.doc-section:last-of-type { border-bottom: none; }
+  .doc-section .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin: 0 0 8px;
+  }
+  .doc-section h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: 1.6rem;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .doc-section h3 {
+    font-weight: 700;
+    font-size: 1.02rem;
+    margin: 28px 0 8px;
+  }
+  .doc-section p { margin: 0 0 14px; max-width: 68ch; }
+  .doc-section p.muted { color: var(--ink-muted); }
+  .doc-section ul { margin: 0 0 16px; padding-left: 22px; }
+  .doc-section li { margin-bottom: 8px; max-width: 66ch; }
+
+  .summary-box {
+    background: var(--accent-soft);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin: 0 0 8px;
+  }
+  .summary-box p { margin: 0 0 10px; }
+  .summary-box p:last-child { margin-bottom: 0; }
+  .summary-box strong { color: var(--accent-strong); }
+
+  /* ---- Data grid ---- */
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin: 8px 0 22px;
+  }
+  .data-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .data-card .tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    background: var(--accent-soft);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .data-card h4 { margin: 0 0 6px; font-size: 15px; }
+  .data-card p { margin: 0; font-size: 14px; color: var(--ink-muted); }
+  .not-collected {
+    background: var(--surface);
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-top: 4px;
+  }
+  .not-collected h4 { margin: 0 0 8px; font-size: 14px; color: var(--ink-muted); font-weight: 600; }
+  .not-collected ul { margin: 0; padding-left: 18px; }
+  .not-collected li { font-size: 14px; color: var(--ink-muted); margin-bottom: 4px; }
+
+  /* ---- Third-party table ---- */
+  .table-wrap { overflow-x: auto; margin: 8px 0 22px; }
+  table.services {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  table.services th, table.services td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  table.services thead th {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    border-bottom: 1px solid var(--ink-faint);
+  }
+  table.services td.svc-name { font-weight: 600; white-space: nowrap; }
+  table.services td.svc-status { font-family: var(--font-mono); font-size: 12px; white-space: nowrap; color: var(--accent-strong); }
+
+  /* ---- Footer ---- */
+  footer.doc-footer {
+    padding-top: 40px;
+    color: var(--ink-faint);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  footer.doc-footer p { max-width: 66ch; margin: 0 0 10px; }
+
+  @media (max-width: 560px) {
+    .toc ol { columns: 1; }
+    .masthead { padding-top: 40px; }
+  }
+</style>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="mark"><span class="dot"></span> Receh</div>
+    <h1>Hapus Akun &amp; Data</h1>
+    <div class="meta">
+      <span>Aplikasi: <strong>Receh: Catat Pengeluaran</strong></span>
+      <span>Berlaku sejak: <strong>28 September 2026</strong></span>
+    </div>
+  </header>
+
+  <section class="doc-section" id="ringkasan">
+    <p class="eyebrow">Ringkasan</p>
+    <h2>Yang perlu Anda ketahui</h2>
+    <div class="summary-box">
+      <p>Receh <strong>tidak memiliki server dan tidak membuat akun</strong> di pihak pengembang. "Masuk dengan Google" hanya dipakai untuk menyimpan cadangan di <strong>Google Drive milik Anda sendiri</strong>.</p>
+      <p>Karena itu, "menghapus akun Receh" berarti <strong>menghapus cadangan di Google Drive Anda</strong>, <strong>mencabut akses Receh</strong> ke akun Google Anda, dan <strong>menghapus data di perangkat</strong>. Semua langkah ini dapat Anda lakukan sendiri kapan saja, dan hasilnya langsung berlaku.</p>
+    </div>
+  </section>
+
+  <section class="doc-section" id="langkah">
+    <p class="eyebrow">Langkah</p>
+    <h2>Cara menghapus akun dan data</h2>
+
+    <h3>1. Hapus cadangan di Google Drive</h3>
+    <p><strong>Dari aplikasi:</strong> buka <em>Lainnya → Cadangan &amp; pemulihan</em>. Di daftar <em>Cadangan di Drive</em>, ketuk <em>⋮</em> pada setiap cadangan lalu pilih <em>Hapus</em>.</p>
+    <p><strong>Tanpa aplikasi:</strong> buka <a href="https://drive.google.com/drive/settings" rel="noopener">drive.google.com</a> di komputer → <em>Setelan</em> (ikon roda gigi) → <em>Kelola aplikasi</em> → cari <em>Receh</em> → <em>Opsi</em> → <em>Hapus data aplikasi tersembunyi</em>. Cara ini menghapus semua cadangan Receh sekaligus.</p>
+
+    <h3>2. Cabut akses Receh ke akun Google</h3>
+    <p>Di aplikasi, ketuk <em>Putuskan</em> pada layar <em>Cadangan &amp; pemulihan</em>. Atau buka <a href="https://myaccount.google.com/connections" rel="noopener">myaccount.google.com/connections</a>, pilih <em>Receh</em>, lalu <em>Hapus semua koneksi</em>.</p>
+
+    <h3>3. Hapus data di perangkat</h3>
+    <p>Hapus instalasi Receh, atau buka <em>Setelan Android → Aplikasi → Receh → Penyimpanan → Hapus data</em>. Ini menghapus semua transaksi, rincian item, foto struk, dan pengaturan yang tersimpan di perangkat.</p>
+
+    <h3>4. Butuh bantuan?</h3>
+    <p>Kirim email ke <strong>sandy.pradana886@gmail.com</strong> dengan judul <em>"Hapus data Receh"</em>. Kami akan membalas dengan panduan dalam 7 hari kerja. Karena pengembang tidak menyimpan data Anda, kami tidak dapat menghapus data atas nama Anda; penghapusan dilakukan melalui langkah 1 sampai 3 di atas.</p>
+  </section>
+
+  <section class="doc-section" id="sebagian">
+    <p class="eyebrow">Sebagian data</p>
+    <h2>Menghapus sebagian data tanpa menghapus akun</h2>
+    <ul>
+      <li><strong>Transaksi tertentu:</strong> buka transaksi, lalu ketuk ikon hapus.</li>
+      <li><strong>Foto struk tertentu:</strong> buka transaksi dan matikan <em>Simpan foto struk</em>, lalu simpan.</li>
+      <li><strong>Cadangan tertentu:</strong> hapus satu per satu di <em>Cadangan &amp; pemulihan</em>.</li>
+      <li><strong>Hentikan pencadangan:</strong> matikan <em>Cadangkan otomatis</em>.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section" id="retensi">
+    <p class="eyebrow">Retensi</p>
+    <h2>Data yang dihapus dan yang disimpan</h2>
+    <div class="table-wrap">
+      <table class="services">
+        <thead>
+          <tr><th>Data</th><th>Setelah langkah di atas</th><th>Masa simpan</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="svc-name">Cadangan di Google Drive</td>
+            <td>Dihapus: transaksi, rincian item, catatan, foto struk, pengaturan</td>
+            <td>Langsung. Salinan di sistem Google dihapus sesuai <a href="https://policies.google.com/technologies/retention" rel="noopener">kebijakan retensi Google</a>.</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Data di perangkat</td>
+            <td>Dihapus seluruhnya, termasuk salinan pengaman pemulihan</td>
+            <td>Langsung</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Info akun Google di aplikasi</td>
+            <td>Email, nama, dan foto profil dihapus dari perangkat</td>
+            <td>Langsung</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Data pada pengembang</td>
+            <td>Tidak ada, pengembang tidak menyimpan data pengguna</td>
+            <td>Tidak berlaku</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Metrik diagnostik ML Kit</td>
+            <td>Metrik kinerja anonim tanpa isi foto atau teks struk, dikelola Google</td>
+            <td>Sesuai kebijakan retensi Google</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">Cadangan Android Auto Backup dikelola oleh Google melalui setelan cadangan perangkat dan akun Google Anda.</p>
+  </section>
+
+  <footer class="doc-footer">
+    <p>Lihat juga <a href="privacy-policy.html">Kebijakan Privasi Receh</a>.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
