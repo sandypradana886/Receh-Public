@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Kebijakan Privasi aplikasi Receh — data apa yang disimpan, ke mana perginya, dan apa yang bisa Anda kendalikan.">
+<meta name="robots" content="index, follow">
+<title>Kebijakan Privasi Receh</title>
+<style>
+  :root {
+    --bg: #F4F7F5;
+    --surface: #FFFFFF;
+    --ink: #14211C;
+    --ink-muted: #56665F;
+    --ink-faint: #839089;
+    --accent: #12805F;
+    --accent-strong: #0B3D2E;
+    --accent-soft: #E7F3EE;
+    --gold: #D69A1E;
+    --line: #D6DFDA;
+    --font-display: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101815;
+      --surface: #17221E;
+      --ink: #E6EEEA;
+      --ink-muted: #9BADA5;
+      --ink-faint: #6B7B74;
+      --accent: #4FC3A0;
+      --accent-strong: #7FD8BC;
+      --accent-soft: #1C2D27;
+      --gold: #F2B93B;
+      --line: #2A3733;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #101815;
+    --surface: #17221E;
+    --ink: #E6EEEA;
+    --ink-muted: #9BADA5;
+    --ink-faint: #6B7B74;
+    --accent: #4FC3A0;
+    --accent-strong: #7FD8BC;
+    --accent-soft: #1C2D27;
+    --gold: #F2B93B;
+    --line: #2A3733;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-strong); }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+    background: var(--accent-soft);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---- Masthead ---- */
+  .masthead {
+    padding: 56px 0 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .masthead .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin-bottom: 22px;
+  }
+  .masthead .mark .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex: none;
+  }
+  .masthead h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.1;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .masthead .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    font-size: 14px;
+    color: var(--ink-muted);
+  }
+  .masthead .meta strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- TOC ---- */
+  .toc {
+    margin: 40px 0 8px;
+    padding: 20px 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .toc h2 {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+  .toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    columns: 2;
+    column-gap: 24px;
+  }
+  .toc li { break-inside: avoid; margin-bottom: 8px; }
+  .toc a { text-decoration: none; font-size: 14.5px; color: var(--ink); }
+  .toc a:hover { color: var(--accent-strong); }
+  .toc a .n { color: var(--ink-faint); font-family: var(--font-mono); font-size: 13px; margin-right: 8px; }
+
+  /* ---- Sections ---- */
+  section.doc-section {
+    padding: 44px 0;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 24px;
+  }
+  section.doc-section:last-of-type { border-bottom: none; }
+  .doc-section .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin: 0 0 8px;
+  }
+  .doc-section h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: 1.6rem;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .doc-section h3 {
+    font-weight: 700;
+    font-size: 1.02rem;
+    margin: 28px 0 8px;
+  }
+  .doc-section p { margin: 0 0 14px; max-width: 68ch; }
+  .doc-section p.muted { color: var(--ink-muted); }
+  .doc-section ul { margin: 0 0 16px; padding-left: 22px; }
+  .doc-section li { margin-bottom: 8px; max-width: 66ch; }
+
+  .summary-box {
+    background: var(--accent-soft);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin: 0 0 8px;
+  }
+  .summary-box p { margin: 0 0 10px; }
+  .summary-box p:last-child { margin-bottom: 0; }
+  .summary-box strong { color: var(--accent-strong); }
+
+  /* ---- Data grid ---- */
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin: 8px 0 22px;
+  }
+  .data-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .data-card .tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    background: var(--accent-soft);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .data-card h4 { margin: 0 0 6px; font-size: 15px; }
+  .data-card p { margin: 0; font-size: 14px; color: var(--ink-muted); }
+  .not-collected {
+    background: var(--surface);
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-top: 4px;
+  }
+  .not-collected h4 { margin: 0 0 8px; font-size: 14px; color: var(--ink-muted); font-weight: 600; }
+  .not-collected ul { margin: 0; padding-left: 18px; }
+  .not-collected li { font-size: 14px; color: var(--ink-muted); margin-bottom: 4px; }
+
+  /* ---- Third-party table ---- */
+  .table-wrap { overflow-x: auto; margin: 8px 0 22px; }
+  table.services {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  table.services th, table.services td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  table.services thead th {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    border-bottom: 1px solid var(--ink-faint);
+  }
+  table.services td.svc-name { font-weight: 600; white-space: nowrap; }
+  table.services td.svc-status { font-family: var(--font-mono); font-size: 12px; white-space: nowrap; color: var(--accent-strong); }
+
+  /* ---- Footer ---- */
+  footer.doc-footer {
+    padding-top: 40px;
+    color: var(--ink-faint);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  footer.doc-footer p { max-width: 66ch; margin: 0 0 10px; }
+
+  @media (max-width: 560px) {
+    .toc ol { columns: 1; }
+    .masthead { padding-top: 40px; }
+  }
+</style>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="mark"><span class="dot"></span> Receh</div>
+    <h1>Kebijakan Privasi</h1>
+    <div class="meta">
+      <span>Berlaku sejak: <strong>28 September 2026</strong></span>
+      <span>Versi: <strong>1.0</strong></span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Daftar isi">
+    <h2>Daftar Isi</h2>
+    <ol>
+      <li><a href="#ringkasan"><span class="n">1</span>Ringkasan</a></li>
+      <li><a href="#data"><span class="n">2</span>Data yang Disimpan</a></li>
+      <li><a href="#penggunaan"><span class="n">3</span>Bagaimana Data Digunakan</a></li>
+      <li><a href="#cadangan"><span class="n">4</span>Penyimpanan &amp; Pencadangan</a></li>
+      <li><a href="#pihak-ketiga"><span class="n">5</span>Layanan Pihak Ketiga</a></li>
+      <li><a href="#izin"><span class="n">6</span>Izin Aplikasi</a></li>
+      <li><a href="#keamanan"><span class="n">7</span>Keamanan Data</a></li>
+      <li><a href="#hak-pengguna"><span class="n">8</span>Hak &amp; Kendali Anda</a></li>
+      <li><a href="#anak"><span class="n">9</span>Kebijakan untuk Anak-anak</a></li>
+      <li><a href="#perubahan"><span class="n">10</span>Perubahan Kebijakan Ini</a></li>
+      <li><a href="#kontak"><span class="n">11</span>Kontak</a></li>
+    </ol>
+  </nav>
+
+  <section class="doc-section" id="ringkasan">
+    <p class="eyebrow">1 — Ringkasan</p>
+    <h2>Singkatnya</h2>
+    <div class="summary-box">
+      <p>Receh adalah aplikasi pencatat pengeluaran. <strong>Semua catatan keuangan dan foto struk Anda disimpan di perangkat Anda sendiri.</strong> Pengembang tidak mengoperasikan server, tidak memiliki akun pengguna, dan tidak menerima, melihat, atau menjual data Anda.</p>
+      <p>Struk dibaca oleh pengenal teks yang <strong>berjalan di perangkat</strong>. Foto struk tidak dikirim ke internet untuk dibaca.</p>
+      <p>Cadangan ke Google Drive bersifat <strong>opsional</strong> dan disimpan di <strong>akun Google Drive milik Anda sendiri</strong>, di folder tersembunyi khusus Receh. Receh tidak dapat melihat berkas lain di Drive Anda.</p>
+      <p>Receh <strong>tidak menampilkan iklan</strong> dan <strong>tidak memakai layanan analitik</strong> atau pelacakan.</p>
+    </div>
+  </section>
+
+  <section class="doc-section" id="data">
+    <p class="eyebrow">2 — Data yang Disimpan</p>
+    <h2>Data yang Disimpan</h2>
+    <p>Data berikut tersimpan di penyimpanan privat Receh di perangkat Anda, dan hanya berisi apa yang Anda masukkan sendiri:</p>
+    <div class="data-grid">
+      <div class="data-card">
+        <span class="tag">Catatan keuangan</span>
+        <h4>Transaksi</h4>
+        <p>Nominal, jenis (pengeluaran/pemasukan), kategori, dompet, nama toko, catatan, tanggal dan jam.</p>
+      </div>
+      <div class="data-card">
+        <span class="tag">Catatan keuangan</span>
+        <h4>Rincian item</h4>
+        <p>Nama barang, jumlah, harga satuan, dan subtotal dari struk yang Anda scan atau ketik.</p>
+      </div>
+      <div class="data-card">
+        <span class="tag">Foto</span>
+        <h4>Foto struk</h4>
+        <p>Hanya jika Anda memilih menyimpannya. Opsi ini bisa dimatikan per transaksi atau untuk semua scan.</p>
+      </div>
+      <div class="data-card">
+        <span class="tag">Pengaturan</span>
+        <h4>Preferensi aplikasi</h4>
+        <p>Bahasa, mata uang, tema, kategori dan dompet yang Anda buat.</p>
+      </div>
+      <div class="data-card">
+        <span class="tag">Opsional</span>
+        <h4>Info akun Google</h4>
+        <p>Jika Anda masuk dengan Google: alamat email, nama, dan URL foto profil, untuk ditampilkan di aplikasi. Disimpan di perangkat saja.</p>
+      </div>
+    </div>
+    <div class="not-collected">
+      <h4>Yang tidak disimpan maupun dikumpulkan Receh</h4>
+      <ul>
+        <li>Lokasi, kontak, SMS, riwayat panggilan, atau daftar aplikasi.</li>
+        <li>Nomor rekening, kartu, PIN, atau kata sandi bank dan e-wallet.</li>
+        <li>Foto lain di galeri selain foto struk yang Anda pilih.</li>
+        <li>ID iklan, sidik jari perangkat, atau data untuk pelacakan lintas aplikasi.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="doc-section" id="penggunaan">
+    <p class="eyebrow">3 — Penggunaan</p>
+    <h2>Bagaimana Data Digunakan</h2>
+    <p>Data Anda hanya dipakai untuk menjalankan fitur aplikasi di perangkat Anda:</p>
+    <ul>
+      <li>Menampilkan riwayat transaksi, ringkasan, dan laporan (per kategori, per hari, barang yang paling sering dibeli, dan sebagainya).</li>
+      <li>Mengisi otomatis nominal, tanggal, toko, dan item dari foto struk.</li>
+      <li>Menyarankan kategori berdasarkan toko yang pernah Anda catat. Pembelajaran ini disimpan di perangkat.</li>
+      <li>Membuat dan memulihkan cadangan, jika Anda menggunakannya.</li>
+    </ul>
+    <p class="muted">Tidak ada profil pengguna, penilaian kredit, atau pemasaran yang dibuat dari data Anda.</p>
+  </section>
+
+  <section class="doc-section" id="cadangan">
+    <p class="eyebrow">4 — Penyimpanan &amp; Pencadangan</p>
+    <h2>Penyimpanan &amp; Pencadangan</h2>
+    <p>Secara bawaan data hanya ada di perangkat Anda. Data meninggalkan perangkat <strong>hanya</strong> melalui cara-cara berikut:</p>
+
+    <h3>Cadangan Google Drive (opsional)</h3>
+    <p>Jika Anda memilih <strong>Masuk dengan Google</strong>, Receh menyimpan berkas cadangan di folder data aplikasi yang tersembunyi (<code>appDataFolder</code>) di akun Google Drive <strong>milik Anda</strong>, memakai izin <code>drive.appdata</code>. Izin ini hanya memberi akses ke berkas yang dibuat Receh sendiri; Receh tidak dapat melihat, membaca, atau mengubah berkas lain di Drive Anda.</p>
+    <ul>
+      <li>Cadangan berisi transaksi, rincian item, foto struk yang disimpan, dan pengaturan aplikasi.</li>
+      <li>Cadangan dibuat otomatis setelah ada perubahan dan saat aplikasi ditutup, dengan jeda agar kuota internet tidak terkuras. Fitur ini bisa dimatikan.</li>
+      <li>Hanya 5 cadangan terakhir yang disimpan; yang lebih lama dihapus otomatis.</li>
+      <li>Berkas cadangan memakai kuota penyimpanan Google Drive Anda dan tunduk pada <a href="https://policies.google.com/privacy" rel="noopener">Kebijakan Privasi Google</a>.</li>
+    </ul>
+
+    <h3>Android Auto Backup</h3>
+    <p>Android dapat mencadangkan data aplikasi ke akun Google perangkat Anda sesuai pengaturan cadangan di perangkat, lalu memulihkannya saat Anda menyiapkan perangkat baru. Untuk Receh, cadangan ke cloud ini hanya mencakup database transaksi dan pengaturan, <strong>tanpa foto struk</strong>. Foto struk hanya ikut saat pemindahan langsung antar-perangkat (kabel atau Wi-Fi) ketika perangkat baru disiapkan.</p>
+
+    <h3>Ekspor ke file</h3>
+    <p>Anda dapat mengekspor cadangan sebagai berkas <code>.receh</code> dan menyimpannya atau mengirimnya ke mana pun Anda pilih. Setelah diekspor, berkas itu sepenuhnya dalam kendali Anda.</p>
+
+    <h3>Salinan pengaman saat memulihkan</h3>
+    <p>Sebelum data di perangkat diganti dengan cadangan, Receh menyimpan satu salinan data yang ada di penyimpanan privat aplikasi agar pemulihan yang keliru masih bisa dibatalkan.</p>
+  </section>
+
+  <section class="doc-section" id="pihak-ketiga">
+    <p class="eyebrow">5 — Pihak Ketiga</p>
+    <h2>Layanan Pihak Ketiga</h2>
+    <p>Receh memakai layanan Google berikut. Masing-masing tunduk pada kebijakan privasi Google.</p>
+    <div class="table-wrap">
+      <table class="services">
+        <thead>
+          <tr>
+            <th>Layanan</th>
+            <th>Untuk apa</th>
+            <th>Data yang terlibat</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="svc-name">Google ML Kit<br>Text Recognition</td>
+            <td>Membaca teks dari foto struk</td>
+            <td>Foto diproses <strong>di perangkat</strong> dan tidak dikirim ke Google. Sesuai pengungkapan resmi ML Kit, layanan ini dapat menghubungi server Google untuk pembaruan dan mengirim metrik kinerja dan penggunaan API (bukan isi foto atau teks struk).</td>
+            <td class="svc-status">Aktif saat scan</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Google Sign-In</td>
+            <td>Masuk untuk cadangan Google Drive</td>
+            <td>Email, nama, dan foto profil akun yang Anda pilih. Disimpan di perangkat untuk ditampilkan, tidak dikirim ke pengembang.</td>
+            <td class="svc-status">Opsional</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Google Drive API</td>
+            <td>Menyimpan dan memulihkan cadangan</td>
+            <td>Berkas cadangan di folder tersembunyi khusus Receh di Drive Anda (izin <code>drive.appdata</code>).</td>
+            <td class="svc-status">Opsional</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Android Backup Service</td>
+            <td>Pemulihan otomatis saat ganti perangkat</td>
+            <td>Database transaksi dan pengaturan, tanpa foto struk, ke akun Google perangkat Anda.</td>
+            <td class="svc-status">Mengikuti setelan perangkat</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">Receh tidak memakai AdMob, Firebase Analytics, Crashlytics, atau layanan iklan dan analitik lain. Jika suatu hari layanan seperti itu ditambahkan, kebijakan ini diperbarui lebih dulu, bukan sesudahnya.</p>
+  </section>
+
+  <section class="doc-section" id="izin">
+    <p class="eyebrow">6 — Izin</p>
+    <h2>Izin Aplikasi</h2>
+    <ul>
+      <li><strong>Kamera dan galeri</strong> — dibuka hanya saat Anda memilih memotret atau memilih foto struk. Receh hanya menerima foto yang Anda ambil atau pilih.</li>
+      <li><strong>Internet</strong> — hanya untuk masuk dengan Google dan cadangan Google Drive, serta komunikasi ML Kit yang dijelaskan di bagian 5. Pencatatan, scan, dan laporan tetap berfungsi tanpa internet.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section" id="keamanan">
+    <p class="eyebrow">7 — Keamanan</p>
+    <h2>Keamanan Data</h2>
+    <p>Data disimpan di penyimpanan privat aplikasi, yang oleh Android dicegah diakses aplikasi lain. Komunikasi dengan layanan Google dilakukan melalui koneksi terenkripsi (HTTPS). Receh tidak meminta dan tidak menyimpan kata sandi akun Google Anda; proses masuk sepenuhnya ditangani oleh Google.</p>
+    <p class="muted">Keamanan data juga bergantung pada perangkat Anda. Kami menyarankan memakai kunci layar dan menjaga akun Google Anda dengan verifikasi dua langkah.</p>
+  </section>
+
+  <section class="doc-section" id="hak-pengguna">
+    <p class="eyebrow">8 — Kendali Anda</p>
+    <h2>Hak &amp; Kendali Anda</h2>
+    <h3>Melihat dan mengubah data</h3>
+    <p>Semua data dapat dilihat, diubah, dan dihapus langsung di aplikasi.</p>
+    <h3>Menghapus data</h3>
+    <ul>
+      <li><strong>Transaksi atau kategori</strong>: hapus langsung di aplikasi.</li>
+      <li><strong>Cadangan di Google Drive</strong>: hapus satu per satu di <em>Pengaturan → Cadangan &amp; pemulihan</em>, atau hapus semuanya lewat Google Drive di web: <em>Setelan → Kelola aplikasi → Receh → Hapus data aplikasi tersembunyi</em>.</li>
+      <li><strong>Akses Google Drive</strong>: pilih <em>Putuskan</em> di aplikasi, atau cabut akses Receh di <a href="https://myaccount.google.com/connections" rel="noopener">myaccount.google.com/connections</a>. Cadangan yang sudah ada tetap di Drive sampai Anda menghapusnya.</li>
+      <li><strong>Semua data di perangkat</strong>: hapus instalasi Receh, atau hapus data aplikasi melalui Setelan Android.</li>
+      <li><strong>Android Auto Backup</strong>: kelola melalui setelan cadangan Google di perangkat Anda.</li>
+    </ul>
+    <p class="muted">Karena pengembang tidak menyimpan data Anda di server mana pun, tidak ada data pada pihak pengembang yang perlu diminta untuk dihapus.</p>
+  </section>
+
+  <section class="doc-section" id="anak">
+    <p class="eyebrow">9 — Anak-anak</p>
+    <h2>Kebijakan untuk Anak-anak</h2>
+    <p>Receh ditujukan untuk pengguna dewasa yang mengelola keuangan pribadi, bukan untuk anak-anak. Aplikasi ini tidak dirancang atau dipasarkan untuk pengguna di bawah usia yang ditetapkan hukum yang berlaku di wilayah Anda.</p>
+  </section>
+
+  <section class="doc-section" id="perubahan">
+    <p class="eyebrow">10 — Perubahan</p>
+    <h2>Perubahan Kebijakan Ini</h2>
+    <p>Kebijakan ini dapat diperbarui seiring bertambahnya fitur Receh. Tanggal "Berlaku sejak" di bagian atas diperbarui setiap kali ada perubahan berarti, dan perubahan yang menyangkut data baru — layanan pihak ketiga baru, jenis data baru, atau jalur pengiriman baru — dituliskan di sini sebelum fiturnya dirilis, bukan sesudahnya.</p>
+  </section>
+
+  <section class="doc-section" id="kontak">
+    <p class="eyebrow">11 — Hubungi Kami</p>
+    <h2>Kontak</h2>
+    <p>Pertanyaan tentang kebijakan privasi ini bisa disampaikan ke:</p>
+    <p style="font-family:var(--font-mono); font-size:15px;">sandy.pradana886@gmail.com</p>
+  </section>
+
+  <footer class="doc-footer">
+    <p>Kebijakan ini menjelaskan perilaku Receh sebagaimana benar-benar diterapkan di dalam aplikasi. Pertanyaan atau keberatan atas isinya bisa disampaikan ke alamat pada bagian 11.</p>
+  </footer>
+
+</div>
+</body>
+</html>
