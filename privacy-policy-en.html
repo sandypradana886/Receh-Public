@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Privacy Policy for the Receh app — what data is stored, where it goes, and what you can control.">
+<meta name="robots" content="index, follow">
+<title>Receh Privacy Policy</title>
+<link rel="alternate" hreflang="id" href="privacy-policy.html">
+<link rel="alternate" hreflang="en" href="privacy-policy-en.html">
+<style>
+  :root {
+    --bg: #F4F7F5;
+    --surface: #FFFFFF;
+    --ink: #14211C;
+    --ink-muted: #56665F;
+    --ink-faint: #839089;
+    --accent: #12805F;
+    --accent-strong: #0B3D2E;
+    --accent-soft: #E7F3EE;
+    --gold: #D69A1E;
+    --line: #D6DFDA;
+    --font-display: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+    --font-body: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101815;
+      --surface: #17221E;
+      --ink: #E6EEEA;
+      --ink-muted: #9BADA5;
+      --ink-faint: #6B7B74;
+      --accent: #4FC3A0;
+      --accent-strong: #7FD8BC;
+      --accent-soft: #1C2D27;
+      --gold: #F2B93B;
+      --line: #2A3733;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #101815;
+    --surface: #17221E;
+    --ink: #E6EEEA;
+    --ink-muted: #9BADA5;
+    --ink-faint: #6B7B74;
+    --accent: #4FC3A0;
+    --accent-strong: #7FD8BC;
+    --accent-soft: #1C2D27;
+    --gold: #F2B93B;
+    --line: #2A3733;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-strong); }
+  a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.86em;
+    background: var(--accent-soft);
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---- Masthead ---- */
+  .masthead {
+    padding: 56px 0 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .masthead .mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin-bottom: 22px;
+  }
+  .masthead .mark .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex: none;
+  }
+  .masthead .mark .lang {
+    margin-left: auto;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: var(--ink-muted);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 4px 12px;
+  }
+  .masthead .mark .lang:hover { color: var(--accent-strong); border-color: var(--accent); }
+  .masthead h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.1;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .masthead .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    font-size: 14px;
+    color: var(--ink-muted);
+  }
+  .masthead .meta strong { color: var(--ink); font-weight: 600; }
+
+  /* ---- TOC ---- */
+  .toc {
+    margin: 40px 0 8px;
+    padding: 20px 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .toc h2 {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+  .toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    columns: 2;
+    column-gap: 24px;
+  }
+  .toc li { break-inside: avoid; margin-bottom: 8px; }
+  .toc a { text-decoration: none; font-size: 14.5px; color: var(--ink); }
+  .toc a:hover { color: var(--accent-strong); }
+  .toc a .n { color: var(--ink-faint); font-family: var(--font-mono); font-size: 13px; margin-right: 8px; }
+
+  /* ---- Sections ---- */
+  section.doc-section {
+    padding: 44px 0;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 24px;
+  }
+  section.doc-section:last-of-type { border-bottom: none; }
+  .doc-section .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin: 0 0 8px;
+  }
+  .doc-section h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: 1.6rem;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .doc-section h3 {
+    font-weight: 700;
+    font-size: 1.02rem;
+    margin: 28px 0 8px;
+  }
+  .doc-section p { margin: 0 0 14px; max-width: 68ch; }
+  .doc-section p.muted { color: var(--ink-muted); }
+  .doc-section ul { margin: 0 0 16px; padding-left: 22px; }
+  .doc-section li { margin-bottom: 8px; max-width: 66ch; }
+
+  .summary-box {
+    background: var(--accent-soft);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 20px 22px;
+    margin: 0 0 8px;
+  }
+  .summary-box p { margin: 0 0 10px; }
+  .summary-box p:last-child { margin-bottom: 0; }
+  .summary-box strong { color: var(--accent-strong); }
+
+  /* ---- Data grid ---- */
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin: 8px 0 22px;
+  }
+  .data-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .data-card .tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    background: var(--accent-soft);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .data-card h4 { margin: 0 0 6px; font-size: 15px; }
+  .data-card p { margin: 0; font-size: 14px; color: var(--ink-muted); }
+  .not-collected {
+    background: var(--surface);
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-top: 4px;
+  }
+  .not-collected h4 { margin: 0 0 8px; font-size: 14px; color: var(--ink-muted); font-weight: 600; }
+  .not-collected ul { margin: 0; padding-left: 18px; }
+  .not-collected li { font-size: 14px; color: var(--ink-muted); margin-bottom: 4px; }
+
+  /* ---- Third-party table ---- */
+  .table-wrap { overflow-x: auto; margin: 8px 0 22px; }
+  table.services {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  table.services th, table.services td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  table.services thead th {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    border-bottom: 1px solid var(--ink-faint);
+  }
+  table.services td.svc-name { font-weight: 600; white-space: nowrap; }
+  table.services td.svc-status { font-family: var(--font-mono); font-size: 12px; white-space: nowrap; color: var(--accent-strong); }
+
+  /* ---- Footer ---- */
+  footer.doc-footer {
+    padding-top: 40px;
+    color: var(--ink-faint);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  footer.doc-footer p { max-width: 66ch; margin: 0 0 10px; }
+
+  @media (max-width: 560px) {
+    .toc ol { columns: 1; }
+    .masthead { padding-top: 40px; }
+  }
+</style>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="mark"><span class="dot"></span> Receh <a class="lang" href="privacy-policy.html" hreflang="id" lang="id">Bahasa Indonesia</a></div>
+    <h1>Privacy Policy</h1>
+    <div class="meta">
+      <span>Effective: <strong>October 2, 2026</strong></span>
+      <span>Version: <strong>1.0</strong></span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#summary"><span class="n">1</span>Summary</a></li>
+      <li><a href="#data"><span class="n">2</span>Data Stored</a></li>
+      <li><a href="#use"><span class="n">3</span>How Data Is Used</a></li>
+      <li><a href="#backup"><span class="n">4</span>Storage &amp; Backup</a></li>
+      <li><a href="#third-party"><span class="n">5</span>Third-Party Services</a></li>
+      <li><a href="#permissions"><span class="n">6</span>App Permissions</a></li>
+      <li><a href="#security"><span class="n">7</span>Data Security</a></li>
+      <li><a href="#rights"><span class="n">8</span>Your Rights &amp; Choices</a></li>
+      <li><a href="#children"><span class="n">9</span>Children's Privacy</a></li>
+      <li><a href="#changes"><span class="n">10</span>Changes to This Policy</a></li>
+      <li><a href="#contact"><span class="n">11</span>Contact</a></li>
+    </ol>
+  </nav>
+
+  <section class="doc-section" id="summary">
+    <p class="eyebrow">1 — Summary</p>
+    <h2>In Short</h2>
+    <div class="summary-box">
+      <p>Receh is an expense tracking app. <strong>All your financial records and receipt photos are stored on your own device.</strong> The developer does not run any servers, has no user accounts, and does not receive, view, or sell your data.</p>
+      <p>Receipts are read by a text recognizer that <strong>runs on your device</strong>. Receipt photos are not sent over the internet to be read.</p>
+      <p>Backup to Google Drive is <strong>optional</strong> and is stored in <strong>your own Google Drive account</strong>, in a hidden folder reserved for Receh. Receh cannot see any other files in your Drive.</p>
+      <p>Since version 1.0.3, Receh shows <strong>native ads from Google AdMob</strong> on the Home, History, and Report screens, always labeled "Ad". AdMob receives the advertising ID, device data, and ad interactions; <strong>your financial records, receipt photos, and backup contents are never shared with AdMob</strong> (see <a href="#third-party">section 5</a>).</p>
+    </div>
+  </section>
+
+  <section class="doc-section" id="data">
+    <p class="eyebrow">2 — Data Stored</p>
+    <h2>Data Stored</h2>
+    <p>The following data is kept in Receh's private storage on your device, and contains only what you enter yourself:</p>
+    <div class="data-grid">
+      <div class="data-card">
+        <span class="tag">Financial records</span>
+        <h4>Transactions</h4>
+        <p>Amount, type (expense/income), category, wallet, store name, note, date and time.</p>
+      </div>
+      <div class="data-card">
+        <span class="tag">Financial records</span>
+        <h4>Line items</h4>
+        <p>Item name, quantity, unit price, and subtotal from receipts you scan or type in.</p>
+      </div>
+      <div class="data-card">
+        <span class="tag">Photos</span>
+        <h4>Receipt photos</h4>
+        <p>Only if you choose to keep them. This can be turned off per transaction or for all scans.</p>
+      </div>
+      <div class="data-card">
+        <span class="tag">Settings</span>
+        <h4>App preferences</h4>
+        <p>Language, currency, number format, theme, and the categories and wallets you create.</p>
+      </div>
+      <div class="data-card">
+        <span class="tag">Optional</span>
+        <h4>Google account info</h4>
+        <p>If you sign in with Google: email address, name, and profile photo URL, shown in the app. Stored on your device only.</p>
+      </div>
+    </div>
+    <div class="not-collected">
+      <h4>What Receh does not store or collect</h4>
+      <ul>
+        <li>Location, contacts, SMS, call history, or the list of installed apps.</li>
+        <li>Bank account or card numbers, PINs, or banking and e-wallet passwords.</li>
+        <li>Any photos in your gallery other than the receipt photos you pick.</li>
+        <li>Any financial data for advertising purposes. The advertising ID is read only by the Google AdMob SDK (section 5), not by the developer.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="doc-section" id="use">
+    <p class="eyebrow">3 — Use</p>
+    <h2>How Data Is Used</h2>
+    <p>Your data is used only to run the app's features on your device:</p>
+    <ul>
+      <li>Showing your transaction history, summaries, and reports (by category, by day, most frequently bought items, and so on).</li>
+      <li>Auto-filling the amount, date, store, and items from a receipt photo.</li>
+      <li>Suggesting categories based on stores you have recorded before. This learning stays on your device.</li>
+      <li>Creating and restoring backups, if you use them.</li>
+    </ul>
+    <p class="muted">No user profiles, credit scoring, or marketing are built from your data.</p>
+  </section>
+
+  <section class="doc-section" id="backup">
+    <p class="eyebrow">4 — Storage &amp; Backup</p>
+    <h2>Storage &amp; Backup</h2>
+    <p>By default your data exists only on your device. Data leaves your device <strong>only</strong> in the following ways:</p>
+
+    <h3>Google Drive backup (optional)</h3>
+    <p>If you choose <strong>Sign in with Google</strong>, Receh stores backup files in the hidden app data folder (<code>appDataFolder</code>) of <strong>your</strong> Google Drive account, using the <code>drive.appdata</code> permission. This permission only grants access to files created by Receh itself; Receh cannot see, read, or modify any other files in your Drive.</p>
+    <ul>
+      <li>Backups contain transactions, line items, saved receipt photos, and app settings.</li>
+      <li>Backups are made automatically after changes and when the app is closed, with intervals that keep data usage low. This can be turned off.</li>
+      <li>Only the 5 most recent backups are kept; older ones are deleted automatically.</li>
+      <li>Backup files count toward your Google Drive storage quota and are subject to the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>.</li>
+    </ul>
+
+    <h3>Android Auto Backup</h3>
+    <p>Android may back up app data to your device's Google account according to your device backup settings, and restore it when you set up a new device. For Receh, this cloud backup includes only the transaction database and settings, <strong>without receipt photos</strong>. Receipt photos are only included in a direct device-to-device transfer (cable or Wi-Fi) when setting up a new device.</p>
+
+    <h3>Export to file</h3>
+    <p>You can export a backup as a <code>.receh</code> file and save or send it anywhere you choose. Once exported, the file is entirely under your control.</p>
+
+    <h3>Safety copy when restoring</h3>
+    <p>Before the data on your device is replaced by a backup, Receh keeps one copy of the existing data in the app's private storage so that a mistaken restore can be undone.</p>
+  </section>
+
+  <section class="doc-section" id="third-party">
+    <p class="eyebrow">5 — Third Parties</p>
+    <h2>Third-Party Services</h2>
+    <p>Receh uses the following Google services. Each is subject to Google's privacy policy.</p>
+    <div class="table-wrap">
+      <table class="services">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Data involved</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="svc-name">Google ML Kit<br>Text Recognition</td>
+            <td>Reading text from receipt photos</td>
+            <td>Photos are processed <strong>on the device</strong> and are not sent to Google. According to ML Kit's official disclosure, the service may contact Google servers for updates and send performance and API usage metrics (not the contents of photos or receipt text).</td>
+            <td class="svc-status">Active when scanning</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Google Sign-In</td>
+            <td>Signing in for Google Drive backup</td>
+            <td>Email, name, and profile photo of the account you choose. Stored on the device for display, not sent to the developer.</td>
+            <td class="svc-status">Optional</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Google Drive API</td>
+            <td>Saving and restoring backups</td>
+            <td>Backup files in Receh's hidden folder in your Drive (<code>drive.appdata</code> permission).</td>
+            <td class="svc-status">Optional</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Google AdMob</td>
+            <td>Showing native ads</td>
+            <td>Android advertising ID, device identifiers, IP address (for approximate location), device and app information, and ad impressions and taps. Used by Google to serve and measure ads, for analytics, and for fraud prevention, and may be shared with Google's advertising partners. See <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">how Google uses data from partner apps</a>.</td>
+            <td class="svc-status">Active when ads load</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Android Backup Service</td>
+            <td>Automatic restore when changing devices</td>
+            <td>Transaction database and settings, without receipt photos, to your device's Google account.</td>
+            <td class="svc-status">Follows device settings</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Ads and your choices</h3>
+    <ul>
+      <li>In regions that require consent (such as the European Economic Area, the United Kingdom, and Switzerland), Receh asks for your consent through Google's form before ads are personalized. You can change that choice at any time in <em>Settings → Ad privacy choices</em>.</li>
+      <li>In all regions, you can reset or delete your advertising ID in <em>Android Settings → Google → Ads</em>. Without an advertising ID, ads are still shown but are not personalized.</li>
+      <li>Receh does not use Firebase Analytics, Crashlytics, or any other analytics service. If such a service is ever added, this policy will be updated first.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section" id="permissions">
+    <p class="eyebrow">6 — Permissions</p>
+    <h2>App Permissions</h2>
+    <ul>
+      <li><strong>Camera and gallery</strong> — opened only when you choose to take or pick a receipt photo. Receh receives only the photos you take or select.</li>
+      <li><strong>Advertising ID</strong> (<code>com.google.android.gms.permission.AD_ID</code>) — added by the AdMob SDK for ads; can be reset or deleted in Android settings.</li>
+      <li><strong>Internet</strong> — only for Google sign-in and Google Drive backup, ML Kit communication, and loading AdMob ads, as described in section 5. Recording, scanning, and reports keep working without internet.</li>
+    </ul>
+  </section>
+
+  <section class="doc-section" id="security">
+    <p class="eyebrow">7 — Security</p>
+    <h2>Data Security</h2>
+    <p>Data is stored in the app's private storage, which Android prevents other apps from accessing. Communication with Google services uses encrypted connections (HTTPS). Receh never asks for or stores your Google account password; signing in is handled entirely by Google.</p>
+    <p class="muted">Data security also depends on your device. We recommend using a screen lock and protecting your Google account with 2-Step Verification.</p>
+  </section>
+
+  <section class="doc-section" id="rights">
+    <p class="eyebrow">8 — Your Control</p>
+    <h2>Your Rights &amp; Choices</h2>
+    <h3>Viewing and changing data</h3>
+    <p>All data can be viewed, edited, and deleted directly in the app.</p>
+    <h3>Deleting data</h3>
+    <ul>
+      <li><strong>Transactions or categories</strong>: delete them directly in the app.</li>
+      <li><strong>Google Drive backups</strong>: delete them one by one in <em>Settings → Backup &amp; restore</em>, or delete them all from Google Drive on the web: <em>Settings → Manage apps → Receh → Delete hidden app data</em>.</li>
+      <li><strong>Google Drive access</strong>: choose <em>Disconnect</em> in the app, or revoke Receh's access at <a href="https://myaccount.google.com/connections" rel="noopener">myaccount.google.com/connections</a>. Existing backups stay in Drive until you delete them.</li>
+      <li><strong>All data on the device</strong>: uninstall Receh, or clear the app's data in Android Settings.</li>
+      <li><strong>Android Auto Backup</strong>: manage it through the Google backup settings on your device.</li>
+    </ul>
+    <p class="muted">Because the developer does not keep your data on any server, there is no data held by the developer that needs to be requested for deletion. A full guide, including data retention periods, is on the <a href="delete-account.html">Delete Account &amp; Data</a> page.</p>
+  </section>
+
+  <section class="doc-section" id="children">
+    <p class="eyebrow">9 — Children</p>
+    <h2>Children's Privacy</h2>
+    <p>Receh is intended for adults managing their personal finances, not for children. The app is not designed or marketed for users under the age set by the laws that apply in your region.</p>
+  </section>
+
+  <section class="doc-section" id="changes">
+    <p class="eyebrow">10 — Changes</p>
+    <h2>Changes to This Policy</h2>
+    <p>This policy may be updated as Receh gains new features. The "Effective" date at the top is updated whenever there is a meaningful change, and changes involving new data — a new third-party service, a new data type, or a new transmission path — are written here before the feature is released, not after.</p>
+    <p class="muted">This policy is available in Indonesian and English. If the two versions differ, the Indonesian version prevails.</p>
+  </section>
+
+  <section class="doc-section" id="contact">
+    <p class="eyebrow">11 — Contact Us</p>
+    <h2>Contact</h2>
+    <p>Questions about this privacy policy can be sent to:</p>
+    <p style="font-family:var(--font-mono); font-size:15px;">sandy.pradana886@gmail.com</p>
+  </section>
+
+  <footer class="doc-footer">
+    <p>This policy describes Receh's behavior as actually implemented in the app. Questions or objections about its contents can be sent to the address in section 11.</p>
+  </footer>
+
+</div>
+</body>
+</html>
