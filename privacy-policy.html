@@ -283,7 +283,7 @@
     <div class="mark"><span class="dot"></span> Receh</div>
     <h1>Kebijakan Privasi</h1>
     <div class="meta">
-      <span>Berlaku sejak: <strong>28 September 2026</strong></span>
+      <span>Berlaku sejak: <strong>2 Oktober 2026</strong></span>
       <span>Versi: <strong>1.0</strong></span>
     </div>
   </header>
@@ -312,7 +312,7 @@
       <p>Receh adalah aplikasi pencatat pengeluaran. <strong>Semua catatan keuangan dan foto struk Anda disimpan di perangkat Anda sendiri.</strong> Pengembang tidak mengoperasikan server, tidak memiliki akun pengguna, dan tidak menerima, melihat, atau menjual data Anda.</p>
       <p>Struk dibaca oleh pengenal teks yang <strong>berjalan di perangkat</strong>. Foto struk tidak dikirim ke internet untuk dibaca.</p>
       <p>Cadangan ke Google Drive bersifat <strong>opsional</strong> dan disimpan di <strong>akun Google Drive milik Anda sendiri</strong>, di folder tersembunyi khusus Receh. Receh tidak dapat melihat berkas lain di Drive Anda.</p>
-      <p>Receh <strong>tidak menampilkan iklan</strong> dan tidak memasang layanan analitik atau pelacakan iklan. Satu-satunya data diagnostik adalah metrik kinerja yang dikirim pustaka pembaca struk Google ML Kit, tanpa isi foto atau teks struk (lihat <a href="#pihak-ketiga">bagian 5</a>).</p>
+      <p>Sejak versi 1.0.3, Receh menampilkan <strong>iklan native dari Google AdMob</strong> di Beranda, Riwayat, dan Laporan, selalu berlabel "Iklan". AdMob menerima ID iklan, data perangkat, dan interaksi dengan iklan; <strong>catatan keuangan, foto struk, dan isi cadangan Anda tidak pernah diberikan ke AdMob</strong> (lihat <a href="#pihak-ketiga">bagian 5</a>).</p>
     </div>
   </section>
 
@@ -353,7 +353,7 @@
         <li>Lokasi, kontak, SMS, riwayat panggilan, atau daftar aplikasi.</li>
         <li>Nomor rekening, kartu, PIN, atau kata sandi bank dan e-wallet.</li>
         <li>Foto lain di galeri selain foto struk yang Anda pilih.</li>
-        <li>ID iklan, sidik jari perangkat, atau data untuk pelacakan lintas aplikasi.</li>
+        <li>Data keuangan apa pun untuk keperluan iklan. ID iklan hanya dibaca oleh SDK Google AdMob (bagian 5), bukan oleh pengembang.</li>
       </ul>
     </div>
   </section>
@@ -429,6 +429,12 @@
             <td class="svc-status">Opsional</td>
           </tr>
           <tr>
+            <td class="svc-name">Google AdMob</td>
+            <td>Menampilkan iklan native</td>
+            <td>ID iklan Android, ID perangkat, alamat IP (untuk perkiraan lokasi), informasi perangkat dan aplikasi, serta tayangan dan ketukan iklan. Dipakai Google untuk menayangkan dan mengukur iklan, analitik, dan pencegahan penipuan, dan dapat dibagikan dengan mitra iklan Google. Lihat <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">cara Google memakai data dari aplikasi mitra</a>.</td>
+            <td class="svc-status">Aktif saat iklan dimuat</td>
+          </tr>
+          <tr>
             <td class="svc-name">Android Backup Service</td>
             <td>Pemulihan otomatis saat ganti perangkat</td>
             <td>Database transaksi dan pengaturan, tanpa foto struk, ke akun Google perangkat Anda.</td>
@@ -437,7 +443,12 @@
         </tbody>
       </table>
     </div>
-    <p class="muted">Receh tidak memakai AdMob, Firebase Analytics, Crashlytics, atau layanan iklan dan analitik lain. Jika suatu hari layanan seperti itu ditambahkan, kebijakan ini diperbarui lebih dulu, bukan sesudahnya.</p>
+    <h3>Iklan dan pilihan Anda</h3>
+    <ul>
+      <li>Di wilayah yang mewajibkan persetujuan (misalnya Uni Eropa dan Inggris), Receh meminta persetujuan Anda melalui formulir Google sebelum iklan dipersonalisasi. Pilihan itu dapat diubah kapan saja di <em>Pengaturan → Pilihan privasi iklan</em>.</li>
+      <li>Di semua wilayah, Anda dapat mereset atau menghapus ID iklan di <em>Setelan Android → Google → Iklan</em>. Tanpa ID iklan, iklan tetap tampil tetapi tidak dipersonalisasi.</li>
+      <li>Receh tidak memakai Firebase Analytics, Crashlytics, atau layanan analitik lain. Jika layanan seperti itu ditambahkan, kebijakan ini diperbarui lebih dulu.</li>
+    </ul>
   </section>
 
   <section class="doc-section" id="izin">
@@ -445,7 +456,8 @@
     <h2>Izin Aplikasi</h2>
     <ul>
       <li><strong>Kamera dan galeri</strong> — dibuka hanya saat Anda memilih memotret atau memilih foto struk. Receh hanya menerima foto yang Anda ambil atau pilih.</li>
-      <li><strong>Internet</strong> — hanya untuk masuk dengan Google dan cadangan Google Drive, serta komunikasi ML Kit yang dijelaskan di bagian 5. Pencatatan, scan, dan laporan tetap berfungsi tanpa internet.</li>
+      <li><strong>ID iklan</strong> (<code>com.google.android.gms.permission.AD_ID</code>) — ditambahkan oleh SDK AdMob untuk iklan; dapat direset atau dihapus di setelan Android.</li>
+      <li><strong>Internet</strong> — hanya untuk masuk dengan Google dan cadangan Google Drive, komunikasi ML Kit, dan memuat iklan AdMob, seperti dijelaskan di bagian 5. Pencatatan, scan, dan laporan tetap berfungsi tanpa internet.</li>
     </ul>
   </section>
 
