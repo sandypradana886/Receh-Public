@@ -110,6 +110,7 @@ html[data-lang="id"] .en, html[data-lang="en"] .id { display: none !important; }
 /* ---- Hero ---- */
 .hero { padding: 56px 0 40px; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
+.hero-grid > * { min-width: 0; }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--primary-container); color: var(--on-primary-container);

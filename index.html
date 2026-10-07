@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=2">
 <style>
   /* ---- Replika layar Beranda ---- */
   .stage { position: relative; display: flex; justify-content: center; }
@@ -23,7 +23,7 @@
     background: linear-gradient(135deg, var(--hero-a), var(--hero-b)); opacity: 0.14; filter: blur(30px);
   }
   .phone {
-    position: relative; width: 340px; max-width: 100%;
+    position: relative; width: min(340px, 100%);
     background: #111614; border-radius: 46px; padding: 10px;
     box-shadow: 0 30px 60px rgba(11, 61, 46, 0.28);
   }
@@ -80,7 +80,8 @@
   .fab svg { color: #fff; width: 26px; height: 26px; }
 
   /* ---- Fitur sebagai kartu dengan avatar kategori ---- */
-  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  @media (max-width: 1080px) { .features { grid-template-columns: repeat(3, 1fr); } }
   .feature { background: var(--surface-low); border-radius: var(--radius-card); padding: 22px; }
   .feature .av { width: 48px; height: 48px; border-radius: 16px; margin-bottom: 14px; }
   .feature .av svg { width: 24px; height: 24px; }
@@ -228,6 +229,16 @@
           <p><span class="id">Nama toko, tanggal, total, dan tiap barang terisi otomatis. Dibaca di HP, tanpa mengirim foto ke internet.</span><span class="en">Store, date, total, and every item filled in automatically. Read on your phone, without uploading the photo.</span></p>
         </article>
         <article class="feature">
+          <div class="av" style="background:#FFE3D3;color:#E0662B"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2.5" width="16" height="19" rx="3"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg></div>
+          <h3><span class="id">Kalkulator di kolom nominal</span><span class="en">A calculator in the amount field</span></h3>
+          <p><span class="id">Ketik 45.000 + 12.500 × 2 dan hasilnya langsung jadi nominal. Cocok untuk patungan atau belanja beberapa barang.</span><span class="en">Type 45 + 12.5 × 2 and the result becomes the amount. Handy for splitting bills or several items.</span></p>
+        </article>
+        <article class="feature">
+          <div class="av" style="background:#D6EEF2;color:#16808F"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/><path d="M21 9h-6a3 3 0 0 0 0 6h6V9z"/><circle cx="15.5" cy="12" r=".5"/></svg></div>
+          <h3><span class="id">Saldo semua dompet</span><span class="en">Every wallet's balance</span></h3>
+          <p><span class="id">Tunai, rekening, dan e-wallet terlihat sekaligus di Laporan. Dompet baru bisa ditambah langsung dari form transaksi.</span><span class="en">Cash, bank, and e-wallets side by side in Reports. Add a new wallet right from the transaction form.</span></p>
+        </article>
+        <article class="feature">
           <div class="av" style="background:#DCE6FB;color:#2D63C8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9v9h9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15V3.5z"/></svg></div>
           <h3><span class="id">Laporan yang mudah dipahami</span><span class="en">Reports that make sense</span></h3>
           <p><span class="id">Per kategori, tren harian, hari paling boros, barang yang paling sering dibeli, dan insight otomatis.</span><span class="en">By category, daily trend, priciest weekday, most-bought items, and automatic insights.</span></p>
@@ -268,6 +279,7 @@
         <img src="assets/shot-id-05.webp" alt="Tangkapan layar Receh 5" loading="lazy" width="540" height="960">
         <img src="assets/shot-id-06.webp" alt="Tangkapan layar Receh 6" loading="lazy" width="540" height="960">
         <img src="assets/shot-id-07.webp" alt="Tangkapan layar Receh 7" loading="lazy" width="540" height="960">
+        <img src="assets/shot-id-08.webp" alt="Tangkapan layar Receh 8" loading="lazy" width="540" height="960">
       </div>
       <div class="shots en">
         <img src="assets/shot-en-01.webp" alt="Receh home screen" loading="lazy" width="540" height="960">
@@ -277,6 +289,7 @@
         <img src="assets/shot-en-05.webp" alt="Receh screenshot 5" loading="lazy" width="540" height="960">
         <img src="assets/shot-en-06.webp" alt="Receh screenshot 6" loading="lazy" width="540" height="960">
         <img src="assets/shot-en-07.webp" alt="Receh screenshot 7" loading="lazy" width="540" height="960">
+        <img src="assets/shot-en-08.webp" alt="Receh screenshot 8" loading="lazy" width="540" height="960">
       </div>
     </div>
   </section>
@@ -313,6 +326,6 @@
   </div>
 </footer>
 
-<script src="assets/site.js" data-title-id="Receh — Catat Pengeluaran Harian" data-title-en="Receh — Daily Expense Tracker"></script>
+<script src="assets/site.js?v=2" data-title-id="Receh — Catat Pengeluaran Harian" data-title-en="Receh — Daily Expense Tracker"></script>
 </body>
 </html>
