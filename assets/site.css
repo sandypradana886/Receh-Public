@@ -1,0 +1,151 @@
+/* Gaya bersama situs Receh. Token warna mengikuti tema Zamrud di aplikasi
+   (Material 3, seed #0E7A5F; gradasi kartu utama #0B3D2E → #12805F). */
+:root {
+  --hero-a: #0B3D2E;
+  --hero-b: #12805F;
+  --surface: #F5FBF7;
+  --surface-low: #EBF3EE;
+  --on-surface: #171D1A;
+  --muted: #404944;
+  --faint: #707973;
+  --line: #D3DDD7;
+  --primary: #1E6B55;
+  --primary-container: #B0F0D6;
+  --on-primary-container: #002117;
+  --secondary-container: #CDE9DD;
+  --gold: #F2B93B;
+  --shadow: 0 10px 24px rgba(11, 61, 46, 0.35);
+  --radius-hero: 28px;
+  --radius-card: 24px;
+  --font: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #0F1512;
+    --surface-low: #1A211D;
+    --on-surface: #DEE4DF;
+    --muted: #BFC9C3;
+    --faint: #89938D;
+    --line: #2E3833;
+    --primary: #95D4BA;
+    --primary-container: #005140;
+    --on-primary-container: #B0F0D6;
+    --secondary-container: #334B42;
+    --shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --surface: #0F1512;
+  --surface-low: #1A211D;
+  --on-surface: #DEE4DF;
+  --muted: #BFC9C3;
+  --faint: #89938D;
+  --line: #2E3833;
+  --primary: #95D4BA;
+  --primary-container: #005140;
+  --on-primary-container: #B0F0D6;
+  --secondary-container: #334B42;
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--on-surface);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--primary); }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 8px; }
+img { display: block; max-width: 100%; }
+
+/* Dua bahasa dalam satu halaman; html[data-lang] memilih yang tampil. */
+html[data-lang="id"] .en, html[data-lang="en"] .id { display: none !important; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.spacer { flex: 1; }
+
+/* ---- Bilah atas ---- */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+.topbar .wrap { display: flex; align-items: center; gap: 10px; height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--on-surface); font-weight: 800; font-size: 20px; letter-spacing: -0.3px; }
+.brand img { width: 36px; height: 36px; border-radius: 11px; }
+.brand.small { font-size: 17px; }
+.brand.small img { width: 28px; height: 28px; border-radius: 9px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 36px; padding: 0 14px; border-radius: 999px;
+  border: 1px solid var(--line); background: transparent; color: var(--on-surface);
+  font: 600 14px var(--font); cursor: pointer; text-decoration: none; white-space: nowrap;
+}
+.chip:hover { background: var(--surface-low); }
+
+/* ---- Tombol seperti FilledButton Material 3 di aplikasi ---- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  height: 56px; padding: 0 26px; border-radius: 16px;
+  font: 700 16px var(--font); text-decoration: none; cursor: pointer; border: 0;
+}
+.btn svg { width: 22px; height: 22px; flex: none; }
+.btn-filled { background: var(--hero-b); color: #fff; box-shadow: 0 6px 16px rgba(18, 128, 95, 0.3); }
+.btn-filled:hover { background: #0F6F53; }
+.btn-tonal { background: var(--secondary-container); color: var(--on-surface); }
+.btn-tonal:hover { filter: brightness(0.97); }
+.btn-light { background: #fff; color: var(--hero-a); }
+.btn-light:hover { background: #EAF6F0; }
+
+/* ---- Hero ---- */
+.hero { padding: 56px 0 40px; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--primary-container); color: var(--on-primary-container);
+  border-radius: 999px; padding: 6px 14px; font-weight: 600; font-size: 14px; margin-bottom: 20px;
+}
+.eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+h1 {
+  font-size: clamp(2.3rem, 5.4vw, 3.9rem);
+  line-height: 1.05; letter-spacing: -1.6px; font-weight: 800; margin: 0 0 18px; text-wrap: balance;
+}
+h1 .accent { background: linear-gradient(135deg, var(--hero-b), #2FA57F); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 34rem; margin: 0 0 28px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.trust { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 26px; color: var(--muted); font-size: 14px; font-weight: 500; }
+.trust > span { display: inline-flex; align-items: center; gap: 6px; }
+.trust svg { width: 18px; height: 18px; color: var(--primary); }
+
+/* ---- Bagian umum ---- */
+section.block { padding: 64px 0; }
+.block h2 { font-size: clamp(1.8rem, 3.6vw, 2.5rem); letter-spacing: -0.8px; line-height: 1.15; margin: 0 0 10px; font-weight: 800; text-wrap: balance; }
+.block .intro { color: var(--muted); max-width: 40rem; margin: 0 0 32px; font-size: 1.05rem; }
+
+/* ---- Kaki halaman ---- */
+.site-footer { padding: 40px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.site-footer nav a { color: var(--muted); text-decoration: none; font-weight: 600; }
+.site-footer nav a:hover { color: var(--primary); }
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero { padding-top: 32px; }
+}
+@media (max-width: 600px) {
+  .wrap { padding: 0 16px; }
+  .topbar .play-small { display: none; }
+  .cta .btn { width: 100%; }
+  section.block { padding: 48px 0; }
+}
